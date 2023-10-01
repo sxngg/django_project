@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gráfico de Prestamos por Deporte</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+<body>
+    <canvas id="grafico_prestamos_por_deporte" width="400" height="400"></canvas>
+
+    <script>
+        var datos = {{ datos_grafico|safe }};
+        var ctx = document.getElementById('grafico_prestamos_por_deporte').getContext('2d');
+    
+        var deportes = datos.map(item => item.deporte);
+        var prestamos = datos.map(item => item.total_prestamos);
+    
+        var config = {
+            type: 'bar',
+            data: {
+                labels: deportes,
+                datasets: [{
+                    label: 'Prestamos por Deporte',
+                    data: prestamos,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+    
+        var grafico = new Chart(ctx, config);
+    </script>    
+    
+</body>
+</html>
