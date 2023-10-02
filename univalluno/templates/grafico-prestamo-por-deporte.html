@@ -10,7 +10,7 @@
     <script>
         var datos = {{ datos_grafico|safe }};
         var ctx = document.getElementById('grafico_prestamos_por_deporte').getContext('2d');
-    
+        console.log('deportes', datos);
         var deportes = datos.map(item => item.deporte);
         var prestamos = datos.map(item => item.total_prestamos);
     
@@ -29,7 +29,10 @@
             options: {
                 scales: {
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        ticks: {
+                        stepSize: 1
+                    }
                     }
                 }
             }

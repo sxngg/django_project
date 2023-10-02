@@ -1,16 +1,14 @@
 from django.db import models
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 from django.core.exceptions import ValidationError
-from datetime import datetime, timedelta
+from datetime import datetime
 
 class Univalluno(models.Model):
     nombres = models.CharField(max_length=255)
     apellidos = models.CharField(max_length=255)
     tipo_univalluno = models.CharField(max_length=50, choices=[('Estudiante', 'Estudiante'), ('Funcionario', 'Funcionario')])
-    tipo_documento = models.CharField(max_length=50) 
+    tipo_documento = models.CharField(max_length=50, choices=[('Cedula de cuidadania', 'Cedula de cuidadania'),('NIT', 'NIT'),('Cedula de extranjeria', 'Cedula de extranjeria'),('Pasaporte', 'Pasaporte')]) 
     numero_documento = models.CharField(max_length=50, unique=True)
-    codigo_estudiante = models.CharField(max_length=50, blank=True, null=True)
+    codigo_estudiante = models.CharField(max_length=50, blank=True, null=True, unique=True)
     correo_electronico = models.EmailField()
 
     #Muestra el nombre del modelo en el admin

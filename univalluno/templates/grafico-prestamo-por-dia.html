@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gráfico de Prestamos por Día</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+</head>
+<body>
+    <canvas id="grafico_prestamos_por_dia" width="400" height="400"></canvas>
+
+    <script>
+        var fecha_inicio_str = "{{ fecha_inicio }}";
+        var fecha_fin_str = "{{ fecha_fin }}";
+        
+        var fecha_inicio = new Date(fecha_inicio_str);
+        var fecha_fin = new Date(fecha_fin_str);
+    
+        var datos = {{ datos_grafico|safe }};
+        console.log('datos', datos)
+        var ctx = document.getElementById('grafico_prestamos_por_dia').getContext('2d');
+        
+        var fechas = datos.map(item => item.fecha);
+        var prestamos = datos.map(item => item.total_prestamos);
+    
+        var config = {
+            type: 'bar',
+            data: {
+                labels: fechas,
+                datasets: [{
+                    label: 'Prestamos por Día',
+                    data: prestamos,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+    
+        var grafico = new Chart(ctx, config);
+    </script>    
+</body>
+</html>
