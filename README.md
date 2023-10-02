@@ -16,12 +16,14 @@ Desarrollar una aplicación web con DJango permita gestionar los préstamos de a
 ![imagen](https://github.com/sxngg/django_project/assets/109168644/0e7a8bc6-f5df-4fd8-a165-11b9f9f4f2e5)
 
 ### Rutas
+Estas son las rutas a visitar
 
-Sigue estos pasos para obtener una copia del proyecto y ejecutarlo en tu máquina local.
-
-1. Gráfico con la cantidad de artículos deportivos prestados por cada deporte de acuerdo a un rango de fechas (este año)
+1. Django admin
 http://127.0.0.1:8000/grafico_prestamo_por_deporte
 
-1. Gráfico con la cantidad de artículos deportivos prestados por cada día de acuerdo a un rango de fechas (este año)
+2. Gráfico con la cantidad de artículos deportivos prestados por cada deporte de acuerdo a un rango de fechas (este año)
+http://127.0.0.1:8000/grafico_prestamo_por_deporte
+
+3. Gráfico con la cantidad de artículos deportivos prestados por cada día de acuerdo a un rango de fechas (este año)
 http://127.0.0.1:8000/grafico_prestamo_por_dia
 
