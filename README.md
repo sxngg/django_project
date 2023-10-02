@@ -16,10 +16,10 @@ Desarrollar una aplicación web con DJango permita gestionar los préstamos de a
 ![imagen](https://github.com/sxngg/django_project/assets/109168644/0e7a8bc6-f5df-4fd8-a165-11b9f9f4f2e5)
 
 ### Rutas
-Estas son las rutas a visitar
+Estas son las rutas a visitar (la ruta por defecto es la de admin)
 
 1. Django admin
-http://127.0.0.1:8000/grafico_prestamo_por_deporte
+http://127.0.0.1:8000/admin
 
 2. Gráfico con la cantidad de artículos deportivos prestados por cada deporte de acuerdo a un rango de fechas (este año)
 http://127.0.0.1:8000/grafico_prestamo_por_deporte
